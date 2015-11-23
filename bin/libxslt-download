@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+'use strict';
+
+var path = require('path');
+var extractZip = require('extract-zip');
+var download = require('../lib/download');
+
+download().then(unzip).catch(function(err) {
+	console.error('Unable to download and extract pre-built binary');
+	console.error(err);
+	return process.exit(1);
+});
+
+function unzip(filePath) {
+	return new Promise(function(resolve, reject) {
+		unzip(filePath, {dir: path.resolve(__dirname, '../bundle')}, function(err) {
+			err ? reject(err) : resolve();
+		});
+	})
+}
