@@ -4,11 +4,12 @@
   "description": "Module wrapper and downloader of pre-compiled LibXSLT native module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "./bin/libxslt-download"
   },
   "author": "Sergey Chikuyonok <serge.che@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bindings": "^1.2.1",
     "chalk": "^1.1.1",
     "es6-promise": "^3.0.2",
     "extract-zip": "^1.2.0",

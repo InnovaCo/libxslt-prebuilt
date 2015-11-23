@@ -13,7 +13,7 @@ download().then(unzip).catch(function(err) {
 
 function unzip(filePath) {
 	return new Promise(function(resolve, reject) {
-		unzip(filePath, {dir: path.resolve(__dirname, '../bundle')}, function(err) {
+		extractZip(filePath, {dir: path.resolve(__dirname, '../build')}, function(err) {
 			err ? reject(err) : resolve();
 		});
 	})
