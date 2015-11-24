@@ -4,7 +4,7 @@
   "description": "Module wrapper and downloader of pre-compiled LibXSLT native module",
   "main": "index.js",
   "scripts": {
-    "postinstall": "./bin/libxslt-download"
+    "postinstall": "bin/libxslt-download"
   },
   "author": "Sergey Chikuyonok <serge.che@gmail.com>",
   "license": "ISC",
