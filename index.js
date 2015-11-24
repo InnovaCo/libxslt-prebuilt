@@ -10,7 +10,7 @@ module.exports.parseFile = function(sourcePath, options, callback) {
 	}
 
 	try {
-		var stylesheet = exports.parse(binding.readXmlFile(sourcePath, options));
+		var stylesheet = module.exports.parse(binding.readXmlFile(sourcePath, options));
 		if (typeof callback === 'function') {
 			callback(null, stylesheet);
 		}
@@ -19,3 +19,5 @@ module.exports.parseFile = function(sourcePath, options, callback) {
 		return callback(err);
 	}
 };
+
+module.exports.resultToString = binding.resultToString;
