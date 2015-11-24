@@ -20,4 +20,6 @@ module.exports.parseFile = function(sourcePath, options, callback) {
 	}
 };
 
-module.exports.resultToString = binding.resultToString;
+module.exports.resultToString = function(doc, stylesheet) {
+	return binding.resultToString(doc, stylesheet.stylesheetObj);
+};
