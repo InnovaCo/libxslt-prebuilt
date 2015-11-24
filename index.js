@@ -3,7 +3,7 @@ var binding = require('bindings')('node-libxslt');
 
 // override `parseFile` method with the one that properly reads stylesheet
 // from file and retains file context
-exports.parseFile = function(sourcePath, options, callback) {
+module.exports.parseFile = function(sourcePath, options, callback) {
 	if (typeof options === 'function') {
 		callback = options;
 		options = {};
