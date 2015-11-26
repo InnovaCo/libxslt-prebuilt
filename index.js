@@ -16,10 +16,9 @@ module.exports.parseFile = function(sourcePath, options, callback) {
 		}
 		return stylesheet;
 	} catch (err) {
-		return callback(err);
+		if (typeof callback === 'function') {
+			return callback(err);
+		}
+		throw err;
 	}
-};
-
-module.exports.resultToString = function(doc, stylesheet) {
-	return binding.resultToString(doc, stylesheet.stylesheetObj);
 };
